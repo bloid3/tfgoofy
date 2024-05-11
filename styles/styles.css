@@ -443,6 +443,7 @@
     box-sizing: border-box; /* Include padding and borders in the element's size */
 }
 
+
 .photo_gallery img {
     flex: 1; /* Each image will take up equal space */
     width: calc(20% - 4px); /* Adjust the width to factor in the margins */

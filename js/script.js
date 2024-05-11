@@ -36,7 +36,7 @@ $(document).ready(function(){
 
     // Función para calcular el ancho de los elementos y el contenedor
     function calculateDimensions() {
-        itemWidth = $('.card-holder').outerWidth(true);
+        itemWidth = $('.card-holder').outerWidth(true) / 2; // Ancho de cada elemento + márgenes
         containerWidth = itemWidth * itemsCount;
         $('.carousel-container').width(containerWidth);
         visibleItems = Math.floor($('.carousel-container').width() / itemWidth);
@@ -47,6 +47,18 @@ $(document).ready(function(){
         calculateDimensions(); // Asegúrate de que las dimensiones se recalculen cada vez
         var newTransform = -(itemWidth * currentIndex);
         $('.carousel-container').css('transform', 'translateX(' + newTransform + 'px)');
+
+		 if (currentIndex <= 0) {
+            $('.carrusel-controls .previous').prop('disabled', true);
+        } else {
+            $('.carrusel-controls .previous').prop('disabled', false);
+        }
+        
+        if (currentIndex >= itemsCount - visibleItems) {
+            $('.carrusel-controls .next').prop('disabled', true);
+        } else {
+            $('.carrusel-controls .next').prop('disabled', false);
+        }
     }
 
     // Eventos de clic para los botones del carrusel
