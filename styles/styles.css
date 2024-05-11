@@ -1,0 +1,508 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 1px;
+}
+
+
+/* Header */
+.navbar {
+    position: relative;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: rgb(60, 60, 60); 
+}
+
+.nav-logo a img {
+    width: 50px; 
+    margin-left: 2rem;
+}
+
+.nav-items {
+    position: absolute; 
+    left: 50%; /* Starting at the exact middle */
+    transform: translateX(-50%); 
+    display: flex;
+    justify-content: center;
+}
+
+.nav-items a {
+    color: #EDEDED;
+    text-decoration: none;
+    margin: 0 4rem; /* Adjusted for equal spacing */
+    font-size: 1rem;
+    transition: color 0.5s ease;
+}
+
+.nav-items a:hover {
+    color: rgb(251, 230, 169); /* Hover effect */
+}
+
+.nav-icons {
+    display: flex;
+    align-items: center;
+    margin-right: 10rem; /* Adjusted to match the logo's margin */
+}
+
+.nav-icons a {
+    margin: 0 1rem;
+}
+
+.nav-icons a img {
+    width: 20px; /* Adjust as needed */
+}
+
+.nav-items.active {
+    display: block;
+    position: absolute;
+    background: #3C3C3B; /* Match the navbar background */
+    right: 0;
+    left: 0;
+    top: 100px; /* Height of the navbar */
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    display: none; /* This will make the button only appear in the mobile view */
+}
+
+.menu-toggle img {
+    width: 20px;
+}
+
+/* Side Menu */
+.menu-container {
+    display: block; /* Changed from none to block */
+    position: fixed;
+    top: 0;
+    right: -100%; /* Start off the screen to the right */
+    height: 100%;
+    width: 250px; /* Adjust width as needed */
+    background: #EDEDED; /* Background color for the menu */
+    z-index: 1000; /* Ensure it's above other content */
+    padding-top: 60px; /* Adjust this value to create space for the close button */
+    padding-right: 20px;
+    padding-left: 20px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Optional: for better visibility */
+    transition: right 0.2s;
+}
+
+.menu-container a {
+    display: block;
+    text-decoration: none;
+    color: #3C3C3B;
+    padding: 10px 0;
+    /* Add more styles for your menu links here */
+}
+
+.close-menu {
+    position: absolute; /* Position the close button absolutely within the .menu-container */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+    border: none;
+    background: none;
+    padding: 20px; /* Add padding to make the button easier to tap on mobile */
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the menu contents */
+}
+
+
+.overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    z-index: 500; /* Below the menu but above other content */
+}
+
+/* Search bar */
+
+.search-bar-container {
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width */
+    position: absolute; /* Positioned absolutely within a relatively positioned parent */
+    left: 0;
+    z-index: 100; /* Below the navbar */
+    box-sizing: border-box; /* Padding included in width */
+    display: flex; /* Use flexbox to center children */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.search-bar-container input[type="text"] {
+    width: 90%; /* Subtract double the padding amount */
+    height: 40px; /* Adjust height as needed */
+    margin: auto; /* Auto margins will center the input */
+    display: block; /* Input is a block element to fill width of container */
+    padding: 5px 10px; /* Inner padding within the input */
+    border: 1px solid #ccc; /* Example border - style as needed */
+    box-sizing: border-box; /* Padding included in width and height */
+}
+
+.hero {
+    height: 830px;
+    background-image: url(../img/texturas/texture.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 100%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.hero-img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translateY(-20%);
+}
+
+.items-section {
+    height: 850px;
+}
+
+.top-section {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-info {
+    width: 80%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+.user-info {
+    width: 80%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+.section-title {
+    width: 80%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+}
+
+.brand-title {
+    width: fit-content;
+    position: absolute;
+}
+
+.user-title {
+    width: fit-content;
+    position: absolute;
+    transform: translateY(190%);
+}
+
+.user-img {
+    width: fit-content;
+    position: absolute;
+    transform: translateY(-60%);
+
+}
+
+.user-img img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+.carrusel-controls {
+    width: fit-content;
+    position: absolute;
+    right: 0;
+    margin-right: 12rem;
+}
+
+.carrusel-controls	button {
+    height: 40px;
+    width: 40px;
+    border: 0;
+}
+
+.carrusel-controls button.disabled {
+    opacity: 0.5; /* Hace que el botón parezca deshabilitado */
+    cursor: default; /* Cambia el cursor para indicar que el botón no es clickeable */
+    pointer-events: none; /* Evita que se puedan hacer clic en el botón */
+}
+
+.mid-section {
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 10em;
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease; /* Suaviza la transición del carrusel */
+}
+
+.card-holder {
+    flex: 0 0 calc(20% - 80px); /* Ajusta el tamaño para cinco elementos, considerando el margen */
+    margin: 40px;
+    max-width: 300px; /* Asegura que todos los elementos tengan el mismo ancho máximo */
+    box-sizing: border-box; /* Incluye padding y border en el ancho total del elemento */
+    text-align: center;
+}
+
+.card-img {
+    width: 100%; /* this will be the width of the card */
+    overflow: hidden; /* ensures images don't spill out of the container */
+}
+
+.card-img img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-info {
+    margin-top: 10px;
+}
+
+.bottom-section {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.view-all {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    background-color: #3C3C3B;
+    color: #EDEDED;
+    text-align: center;
+    border: none;
+}
+
+.view-all:hover {
+    color: rgb(251, 230, 169);
+    cursor: pointer;
+}
+
+/* Modo cuadrícula para el carrusel */
+.grid-view {
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en filas */
+    transform: none !important; /* Anula cualquier transformación aplicada */
+}
+
+.grid-view .card-holder {
+    flex: 0 0 auto; /* Restablece cualquier propiedad flex que haya sido aplicada */
+    width: calc(33% - 30px); /* Ajusta esto según el número de columnas que desees */
+    margin: 15px; /* Asegúrate de que el margen total sea el mismo que se restó en el ancho */
+}
+
+/* Restablece las dimensiones para el modo carrusel al hacer clic en 'VER TODO' nuevamente */
+.carousel-container:not(.grid-view) .card-holder {
+    width: 100%; /* O lo que sea adecuado para el modo carrusel */
+}
+
+.categorias {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px;
+}
+
+.button-categoria {
+    position: relative; /* Posicionamiento relativo para posicionar el título */
+    width: 30%; /* Ancho para 3 elementos con algo de espacio entre ellos */
+}
+
+.button-categoria img {
+    width: 100%; /* Imagen ocupa todo el ancho del contenedor */
+    display: block; /* Imagenes se muestran en bloque para evitar espacio extra debajo */
+}
+
+.h2-categoria {
+    position: absolute; /* Posicionamiento absoluto respecto a su padre */
+    bottom: 80px; /* Posición desde el fondo del contenedor */
+    left: 50%; /* Centrado horizontal */
+    transform: translateX(-50%); /* Centrado horizontal */
+    background-color: #3C3C3B; /* Fondo negro para el título */
+    color: #EDEDED; /* Texto en blanco */
+    padding: 5px 10px; /* Relleno para el título */
+}
+
+.h2-categoria h2 {
+    margin: 0; /* Eliminar márgenes por defecto del h2 */
+    font-size: 2rem; /* Tamaño de fuente para el título */
+}
+
+.site-footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: #fff; /* Color del texto */
+    font-family: 'Raleway', sans-serif;
+    padding: 20px 0; /* Espaciado interior */
+}
+  
+.footer-top-section,
+.footer-bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10%; /* Espaciado horizontal */
+    margin-top: 3em;
+}
+
+.footer-logo img {
+    max-width: 300px; /* Ajusta esto al tamaño de tu logo */
+}
+
+.footer-newsletter {
+    display: flex;
+    margin-right: 6.5rem;
+}
+
+.footer-newsletter input[type="email"] {
+    padding: 10px;
+    border: none;
+    width: 450px;
+}
+
+.footer-newsletter button {
+    padding: 10px 20px;
+    background-color: #555; /* Fondo del botón */
+    font-size: 1em;
+    font-weight: 300;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.footer-newsletter button:hover {
+    color: rgb(251, 230, 169);
+}
+
+.footer-social-icons {
+    display: flex;
+    justify-content: center; /* Centra los íconos si hay espacio adicional */
+}
+
+.footer-social-icons .social-icon {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 1.5em; /* Espaciado entre íconos */
+    font-size: 1.5em; /* Tamaño de los íconos */
+}
+
+.footer-social-icons .social-icon:hover {
+    color: rgb(251, 230, 169);
+}
+
+.footer-social-icons .social-icon:last-child {
+    margin-right: 0; /* No hay margen después del último ícono */
+}
+
+.footer-links {
+    text-align: right;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 15px; /* Espaciado entre enlaces */
+}
+
+.footer-links a:hover {
+    color: rgb(251, 230, 169);
+}
+  
+.photo_gallery {
+    display: flex; /* Use flexbox to layout the images */
+    justify-content: space-between; /* Space them out evenly */
+    align-items: center; /* Align them vertically */
+    width: 99.vw; /* Set the width to the full viewport width */
+    padding: 0; /* Remove padding if necessary */
+    margin: 0; /* Remove margins if necessary */
+    box-sizing: border-box; /* Include padding and borders in the element's size */
+}
+
+.photo_gallery img {
+    flex: 1; /* Each image will take up equal space */
+    width: calc(20% - 4px); /* Adjust the width to factor in the margins */
+    height: calc(20vw - 4px); /* Make the height proportional to the width of the viewport */
+    object-fit: contain; /* Ensures the whole image fits without being cropped */
+    margin: 1px; /* Margin between images */
+    image-rendering: high-quality; /* Attempt to improve the image quality in browsers that support this */
+}
+
+@media (max-width: 1400px) {
+    /* This rule is for hiding the navigation links and showing the menu toggle button */
+    .nav-items {
+        display: none; /* Hide text navigation on mobile */
+    }
+
+    /* This rule is for showing the menu toggle button */
+    .nav-icons .menu-toggle {
+        display: block; /* Show the menu toggle button on mobile */
+    }
+
+    /* Adjust the navbar styling for mobile */
+    .navbar {
+        justify-content: space-between; /* Adjust content spacing for mobile */
+    }
+
+    /* Adjust the logo margin for mobile */
+    .nav-logo img {
+        margin-left: 1rem;
+    }
+
+    /* Adjust the icon margin for mobile */
+    .nav-icons {
+        margin-right: 1rem;
+    }
+
+    .hero {
+        height: 670px;
+    }
+
+    .mid-section {
+        margin-left: 7em;
+    }
+
+    .card-holder {
+        flex: 0 0 calc(25% - 40px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        height: 550px;
+    }
+
+    .mid-section {
+        margin-left: 2em;
+    }
+
+    .card-holder {
+        flex: 0 0 calc(33% - 40px);
+    }
+}
+
+
