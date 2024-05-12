@@ -452,6 +452,75 @@
     margin: 1px; /* Margin between images */
     image-rendering: high-quality; /* Attempt to improve the image quality in browsers that support this */
 }
+.contact-form {
+    max-width: 600px; /* Limita el ancho máximo del formulario */
+    margin: 40px auto; /* Centra el formulario horizontalmente y agrega un margen vertical */
+    padding: 20px; /* Espaciado interno alrededor de los elementos del formulario */
+    background-color: #f5f5f5; /* Un ligero fondo gris para destacar el formulario */
+    border-radius: 8px; /* Bordes redondeados para un aspecto moderno */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para dar profundidad */
+}
+
+.contact-form label {
+    display: block; /* Hace que cada etiqueta tenga su propia línea */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+    color: #333; /* Color oscuro para las etiquetas para mejorar la legibilidad */
+    font-weight: bold; /* Hace que las etiquetas sean negritas */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Asegura que los campos de entrada ocupen todo el ancho disponible */
+    padding: 8px; /* Espaciado interno dentro de los campos de entrada */
+    margin-bottom: 15px; /* Espacio entre cada campo */
+    border: 1px solid #ccc; /* Borde sutil para los campos de entrada */
+    border-radius: 4px; /* Bordes ligeramente redondeados para los campos de entrada */
+}
+
+.contact-form textarea {
+    resize: vertical; /* Permite al usuario ajustar el tamaño vertical del textarea */
+    height: 120px; /* Altura inicial del textarea */
+}
+
+.contact-form button.submit-button {
+    width: 100%; /* El botón ocupa todo el ancho del formulario */
+    padding: 10px 15px; /* Relleno cómodo para el botón */
+    background-color: #3C3C3B; /* Color del botón que coincide con el tema del sitio */
+    color: #fff; /* Texto blanco para contraste */
+    border: none; /* Sin borde para el botón */
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    cursor: pointer; /* Cursor de puntero para indicar que es clickeable */
+    transition: background-color 0.3s; /* Transición suave para efectos de hover */
+}
+
+.contact-form button.submit-button:hover {
+    background-color: #333; /* Cambio de color al pasar el ratón */
+}
+
+.text-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.text-container ul {
+    padding-left: 20px; /* Ajusta la indentación de la lista */
+    margin-top: 10px; /* Espacio antes de iniciar la lista */
+    margin-bottom: 10px; /* Espacio después de terminar la lista */
+}
+
+.text-container li {
+    margin-bottom: 8px; /* Espacio entre los ítems de la lista */
+    line-height: 1.5; /* Ajusta el espacio entre líneas para mejorar la legibilidad */
+    list-style-type: disc; /* Estilo del marcador de lista */
+}
+
+
 
 @media (max-width: 1400px) {
     /* This rule is for hiding the navigation links and showing the menu toggle button */

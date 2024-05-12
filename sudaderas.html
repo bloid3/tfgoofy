@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudaderas - Phantom Project</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
+    <header class="site-header">
+        <!-- Navegación -->
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html"><img src="img/logos/isologo_blanco.png" alt="Logo"></a>
+            </div>
+            <div class="nav-items">
+                <a href="colecciones.html">Colecciones</a>
+                <a href="index.html">Tienda</a>
+                <a href="comunidad.html">Comunidad</a>
+            </div>
+            <div class="nav-icons">
+                <a href="#"><img src="img/iconos/buscar.png" alt="Search"></a>
+                <a href="#"><img src="img/iconos/perfil.png" alt="Account"></a>
+                <a href="#"><img src="img/iconos/cart.png" alt="Cart"></a>
+                <button class="menu-toggle">
+                    <img src="img/iconos/menu.png" alt="Menu" />
+                </button>
+            </div>
+        </nav>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Buscar..." />
+        </div>
+        <div class="menu-container">
+            <button class="close-menu"><b>X</b></button>
+            <a href="#tienda"><b>Tienda</b></a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#comunidad">Comunidad</a>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <!-- Imagen de la hero section específica para sudaderas -->
+            <div class="hero-img">
+                <img src="img/modelos/mike-von-bWUOx0SaSAk-unsplash.jpg" alt="model wearing sweatshirts">
+            </div>
+        </div>
+        <div class="items-section">
+            <div class="top-section">
+                <div class="section-info">
+                    <div class="section-title">
+                        <h1 style="text-align: center;">NUESTRAS SUDADERAS</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="mid-section" style="margin-left: 0px;">
+                <div class="carousel-container" style="width: 100%; justify-content: center;">
+                    <!-- Contenedor de artículos con tarjetas para cada sudadera -->
+                    <div class="card-holder">
+                        <div class="card-img">
+                            <img src="img/ropa/sudadera1.webp" alt="sudadera casual">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Sudadera Casual</h3>
+                            <h3 class="card-price">30,99€</h3>
+                        </div>
+                    </div>
+                    <div class="card-holder">
+                        <div class="card-img">
+                            <img src="img/ropa/sudadera2.webp" alt="sudadera urbana">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Sudadera Urbana</h3>
+                            <h3 class="card-price">35,99€</h3>
+                        </div>
+                    </div>
+					<div class="card-holder">
+                        <div class="card-img">
+                            <img src="img/ropa/sudadera3.webp" alt="sudadera urbana">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Sudadera Urbana</h3>
+                            <h3 class="card-price">35,99€</h3>
+                        </div>
+                    </div>
+					<div class="card-holder">
+                        <div class="card-img">
+                            <img src="img/ropa/sudadera4.webp" alt="sudadera urbana">
+                        </div>
+                        <div class="card-info">
+                            <h3 class="card-title">Sudadera Urbana</h3>
+                            <h3 class="card-price">35,99€</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer, similar al index -->
+    <footer class="site-footer">
+        <div class="footer-top-section">
+          <div class="footer-logo">
+            <img src="img/logos/banner.png" alt="PH4NTOM PROJECT Logo">
+          </div>
+          <div class="footer-newsletter">
+            <input type="email" placeholder="Email" />
+            <button type="submit">SUSCRIBIRSE</button>
+          </div>
+        </div>
+        <div class="footer-bottom-section"> 
+          <div class="footer-social-icons">
+            <a href="your_instagram_url" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="your_tiktok_url" class="social-icon"><i class="fab fa-tiktok"></i></a>
+            <a href="your_twitter_url" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="your_youtube_url" class="social-icon"><i class="fab fa-youtube"></i></a>
+          </div>
+          <div class="footer-links">
+            <a href="link_to_contact">CONTACTO</a>
+            <a href="link_to_returns">DEVOLUCIONES</a>
+            <a href="link_to_returns">ENVIOS</a> 
+            <a href="link_to_returns">PRIVACIDAD</a>
+            <a href="link_to_returns">TÉRMINOS Y CONDICIONES</a>
+          </div>
+        </div>
+    </footer>        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

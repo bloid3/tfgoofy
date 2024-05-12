@@ -82,27 +82,19 @@ $(document).ready(function(){
     });
 
     // Calcula las dimensiones iniciales cuando el documento esté listo
-    $(document).ready(function() {
-        updateCarousel();
-    });
-
-
-
-    $('.view-all').click(function() {
-        // Cambia la clase del contenedor del carrusel para que se ajuste a la vista de cuadrícula
-        $('.carousel-container').toggleClass('grid-view');
-    
-        // Comprueba si la clase 'grid-view' está activa y ajusta el carrusel en consecuencia
-        if ($('.carousel-container').hasClass('grid-view')) {
-            // Establece el ancho del contenedor para que todos los 'card-holder' puedan ajustarse
-            var gridItemWidth = $('.carousel-container').width() / visibleItems; // Ancho para el modo cuadrícula
-            $('.card-holder').css('width', gridItemWidth + 'px'); // Establece el ancho de cada 'card-holder'
-            $('.carousel-container').css('transform', 'none'); // Restablece la transformación
-        } else {
-            // Vuelve al modo carrusel
-            $('.card-holder').css('width', ''); // Restablece el ancho de cada 'card-holder'
-            updateCarousel(); // Actualiza el carrusel para mostrar la cantidad correcta de elementos
-        }
-    });
-
+    $(document).ready(function(){
+		$('.view-all1, .view-all2').click(function() {
+			var carouselContainer = $(this).closest('.items-section').find('.carousel-container');
+			carouselContainer.toggleClass('grid-view');
+	
+			if (carouselContainer.hasClass('grid-view')) {
+				var gridWidth = carouselContainer.width();
+				$(this).closest('.items-section').find('.card-holder').css('width', gridWidth + 'px');
+				carouselContainer.css('transform', 'none');
+			} else {
+				$(this).closest('.items-section').find('.card-holder').css('width', '');
+				updateCarousel();
+			}
+		});
+	});
 });
