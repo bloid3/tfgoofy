@@ -82,19 +82,22 @@ $(document).ready(function(){
     });
 
     // Calcula las dimensiones iniciales cuando el documento esté listo
-    $(document).ready(function(){
-		$('.view-all1, .view-all2').click(function() {
-			var carouselContainer = $(this).closest('.items-section').find('.carousel-container');
-			carouselContainer.toggleClass('grid-view');
-	
-			if (carouselContainer.hasClass('grid-view')) {
-				var gridWidth = carouselContainer.width();
-				$(this).closest('.items-section').find('.card-holder').css('width', gridWidth + 'px');
-				carouselContainer.css('transform', 'none');
-			} else {
-				$(this).closest('.items-section').find('.card-holder').css('width', '');
-				updateCarousel();
-			}
-		});
-	});
+	 $('.view-all').click(function() {
+        var carouselContainer = $(this).closest('.items-section').find('.carousel-container');
+        var itemsSection = $(this).closest('.items-section');
+		var carruselControls = $(this).closest('.items-section').find('.carrusel-controls');
+        
+        carouselContainer.toggleClass('grid-view');
+
+        if (carouselContainer.hasClass('grid-view')) {
+            itemsSection.animate({ height: 1370}, 500); // +200 para considerar otros márgenes y paddings
+			carruselControls.hide();
+            $(this).text('VER MENOS');
+        } else {
+            itemsSection.animate({ height: '850px' }, 500); // La altura original del contenedor
+			carruselControls.show();
+            $(this).text('VER TODO');
+            updateCarousel();
+        }
+    });
 });
