@@ -6,10 +6,6 @@
     letter-spacing: 1px;
 }
 
-a {
-    text-decoration: none; /* Elimina el subrayado */
-    color: inherit; /* Hereda el color del elemento padre */
-}
 
 /* Header */
 .site-header {
@@ -797,35 +793,29 @@ a {
 /* Detalles del Producto */
 .product-details {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    gap: 20px;
+    justify-content: center; /* Centra horizontalmente .product-info dentro de .product-details */
+    align-items: center; /* Centra verticalmente .product-info dentro de .product-details */
     margin-top: 40px;
+    margin-left: 185px;
 }
 
-.product-image {
+.product-info-detalle {
     flex: 1;
-    max-width: 500px;
+    margin-left: 30px;
+    margin-right: 30px;
+    max-width: 230px; /* Aumenta el tamaño máximo para mayor visibilidad */
+    display: flex;
+    flex-direction: column; /* Organiza los elementos hijos en una columna */
+    justify-content: center; /* Centra verticalmente los elementos dentro de .product-info */
+    align-items: center; /* Centra horizontalmente los elementos dentro de .product-info */
 }
 
-.product-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.product-info {
-    flex: 1;
-    max-width: 200px;
-}
-
-.product-info h1 {
+.product-info-detalle h1 {
     font-size: 2rem;
     margin-bottom: 10px;
 }
 
-.product-info p {
+.product-info-detalle p {
     font-size: 1.2rem;
     margin-bottom: 10px;
 }
@@ -893,7 +883,7 @@ a {
 
 .product-image {
     flex: 1;
-    max-width: 500px;
+    max-width: 400px;
 }
 
 .product-image img {
@@ -907,15 +897,15 @@ a {
     line-height: 1.5;
 }
 
-
 .vertical-carousel {
     display: flex;
+    padding-right: 30px;
     flex-direction: column;
     align-items: center;
     width: 120px; /* Ajusta el ancho según sea necesario */
 }
 
-.carousel-container {
+.carousel-container-detalle {
     position: relative;
     height: 330px; /* Ajusta la altura para mostrar 3 imágenes de 120px cada una */
     overflow: hidden; /* Asegura que las imágenes fuera de esta área se oculten */
