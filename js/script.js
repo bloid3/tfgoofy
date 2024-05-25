@@ -36,10 +36,10 @@ $(document).ready(function(){
 
     // Función para calcular el ancho de los elementos y el contenedor
     function calculateDimensions() {
-        itemWidth = $('.card-holder').outerWidth(true) / 2; // Ancho de cada elemento + márgenes
+        itemWidth = $('.card-holder').outerWidth(true); // Ancho de cada elemento + márgenes
         containerWidth = itemWidth * itemsCount;
         $('.carousel-container').width(containerWidth);
-        visibleItems = Math.floor($('.carousel-container').width() / itemWidth);
+        visibleItems = Math.floor($('.carousel-container').parent().width() / itemWidth);
     }
 
     // Función para actualizar el carrusel
@@ -48,7 +48,7 @@ $(document).ready(function(){
         var newTransform = -(itemWidth * currentIndex);
         $('.carousel-container').css('transform', 'translateX(' + newTransform + 'px)');
 
-		 if (currentIndex <= 0) {
+        if (currentIndex <= 0) {
             $('.carrusel-controls .previous').prop('disabled', true);
         } else {
             $('.carrusel-controls .previous').prop('disabled', false);
@@ -60,6 +60,9 @@ $(document).ready(function(){
             $('.carrusel-controls .next').prop('disabled', false);
         }
     }
+
+    // Inicializar el carrusel al cargar la página
+    updateCarousel();
 
     // Eventos de clic para los botones del carrusel
     $('.carrusel-controls .next').click(function() {
@@ -81,22 +84,21 @@ $(document).ready(function(){
         updateCarousel();
     });
 
-    // Calcula las dimensiones iniciales cuando el documento esté listo
-	 $('.view-all').click(function() {
+    // Manejo del botón "VER TODO"
+    $('.view-all').click(function() {
         var carouselContainer = $(this).closest('.items-section').find('.carousel-container');
         var itemsSection = $(this).closest('.items-section');
-		var carruselControls = $(this).closest('.items-section').find('.carrusel-controls');
+        var carruselControls = $(this).closest('.items-section').find('.carrusel-controls');
         
         carouselContainer.toggleClass('grid-view');
 
         if (carouselContainer.hasClass('grid-view')) {
-            itemsSection.animate({ height: 1370}, 500); // +200 para considerar otros márgenes y paddings
-			carruselControls.hide();
+            itemsSection.animate({ height: 1370 }, 500); // +200 para considerar otros márgenes y paddings
+            carruselControls.hide();
             $(this).text('VER MENOS');
         } else {
             itemsSection.animate({ height: '850px' }, 500); // La altura original del contenedor
-			carruselControls.show();
-            $(this).text('VER TODO');
+            carruselControls.show();
             updateCarousel();
         }
     });
