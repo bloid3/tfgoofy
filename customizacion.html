@@ -4,12 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customización de Producto</title>
-    <link rel="stylesheet" href="styles/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/@interactjs/interactjs@1.10.11/dist/interact.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        /* Header */
+        .site-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgb(60, 60, 60);
+        }
+
+        .navbar {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: rgb(60, 60, 60);
+        }
+
+        .nav-logo a img {
+            width: 50px;
+            margin-left: 2rem;
+        }
+
+        .nav-items {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-items a {
+            color: #EDEDED;
+            text-decoration: none;
+            margin: 0 4rem;
+            font-size: 1rem;
+            transition: color 0.5s ease;
+        }
+
+        .nav-items a:hover {
+            color: rgb(251, 230, 169);
+        }
+
+        .nav-icons {
+            display: flex;
+            align-items: center;
+            margin-right: 10rem;
+        }
+
+        .nav-icons a {
+            margin: 0 1rem;
+        }
+
+        .nav-icons a img {
+            width: 20px;
+        }
+
+        .menu-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+            display: none;
+        }
+
+        .menu-toggle img {
+            width: 20px;
+        }
+
+        .menu-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100%;
+            width: 250px;
+            background: #EDEDED;
+            z-index: 1000;
+            padding-top: 60px;
+            padding-right: 20px;
+            padding-left: 20px;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: right 0.2s;
+        }
+
+        .menu-container a {
+            display: block;
+            text-decoration: none;
+            color: #3C3C3B;
+            padding: 10px 0;
+        }
+
+        .close-menu {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border: none;
+            background: none;
+            padding: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 500;
+        }
+
+        /* Main Customization Page */
+        .customization-page {
+            display: flex;
+            padding: 20px;
+        }
+
+        .sidebar {
+            width: 20%;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .dropdown-btn {
+            background: #3C3C3B;
+            color: #EDEDED;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dropdown-container {
+            display: none;
+            background: #EDEDED;
+            padding: 10px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .dropdown-container img {
+            width: 100px;
+            height: 100px;
+            cursor: pointer;
+            object-fit: cover;
+        }
+
+        .product-customization {
+            width: 80%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-image {
+            position: relative;
+            margin-bottom: 40px; /* Increased margin for more space */
+            width: 300px;
+            height: 300px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        #uploaded-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .uploaded-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 100px;
+            max-height: 100px;
+            cursor: move;
+            resize: both;
+            overflow: auto;
+        }
+
+        .product-details {
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product-details p {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .image-upload {
+            margin-bottom: 10px;
+        }
+
+        .image-upload input {
+            display: none;
+        }
+
+        .image-upload label {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3C3C3B;
+            color: #EDEDED;
+            cursor: pointer;
+        }
+
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .product-info label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .product-info input,
+        .product-info select,
+        .product-info textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+		.description textarea {
+			width: 100%;
+		}
+
+        .product-info textarea {
+            resize: vertical;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #3C3C3B;
+            color: #EDEDED;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: #333;
+        }
+
+        /* Footer */
+        .site-footer {
+            background-color: #333;
+            color: #fff;
+            font-family: 'Raleway', sans-serif;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1400px) {
+            .nav-items {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .navbar {
+                justify-content: space-between;
+            }
+
+            .nav-logo img {
+                margin-left: 1rem;
+            }
+
+            .nav-icons {
+                margin-right: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="site-header">
@@ -31,13 +348,6 @@
                 </button>
             </div>
         </nav>
-        <div class="menu-container">
-            <button class="close-menu"><b>X</b></button>
-            <a href="#tienda"><b>Tienda</b></a>
-            <a href="#colecciones">Colecciones</a>
-            <a href="#comunidad">Comunidad</a>
-        </div>
-        <div class="overlay"></div>
     </header>
 
     <main class="customization-page">
@@ -45,15 +355,34 @@
             <ul>
                 <li><button class="dropdown-btn">Camisetas</button>
                     <div class="dropdown-container">
-                        <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png" alt="Camiseta 1">
-                        <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta 2">
-                        <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png" alt="Camiseta 3">
-                        <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png" alt="Camiseta 4">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png" alt="Camiseta 1 Beige" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta 1 Blanca" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png" alt="Camiseta 1 Gris" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png" alt="Camiseta 1 Negra" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png" alt="Camiseta 2 Beige" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png" alt="Camiseta 2 Blanca" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png" alt="Camiseta 2 Gris" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png">
+                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png" alt="Camiseta 2 Negra" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png">
                     </div>
                 </li>
-                <li>Sudaderas</li>
-                <li>Pantalones</li>
-                <li>Gorras</li>
+                <li><button class="dropdown-btn">Sudaderas</button>
+                    <div class="dropdown-container">
+                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png" alt="Sudadera 1 Beige" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png">
+                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png" alt="Sudadera 1 Blanca" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png">
+                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png" alt="Sudadera 1 Gris" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png">
+                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png" alt="Sudadera 1 Negra" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png">
+                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png" alt="Sudadera 1 Morada" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png">
+                    </div>
+                </li>
+                <li><button class="dropdown-btn">Gorros</button>
+                    <div class="dropdown-container">
+                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png" alt="Gorra Beige" data-image="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png">
+                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png" alt="Gorra Blanca" data-image="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png">
+                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png" alt="Gorra Gris" data-image="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png">
+                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png" alt="Gorra Negra" data-image="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png">
+                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png" alt="Gorra Morada" data-image="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png">
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="product-customization">
@@ -92,25 +421,58 @@
     <footer class="site-footer">
         <p>&copy; 2024 Phantom Project. Todos los derechos reservados.</p>
     </footer>
+	<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
     <script>
+        console.log("Checking if interact is loaded:", typeof interact !== 'undefined');
         document.addEventListener('DOMContentLoaded', function() {
-            var dropdownBtn = document.querySelector('.dropdown-btn');
-            var dropdownContainer = document.querySelector('.dropdown-container');
+            var dropdownBtns = document.querySelectorAll('.dropdown-btn');
+            var dropdownContainers = document.querySelectorAll('.dropdown-container');
             var selectedShirt = document.getElementById('selected-shirt');
             var uploadImage = document.getElementById('upload-image');
             var uploadedImagesContainer = document.getElementById('uploaded-images');
             var imageCountSpan = document.getElementById('image-count');
             var imageCount = 0;
 
-            dropdownBtn.addEventListener('click', function() {
-                dropdownContainer.classList.toggle('show');
+            dropdownContainers.forEach(function(container) {
+                container.style.display = "none"; // Hide all dropdowns by default
             });
 
-            dropdownContainer.addEventListener('click', function(event) {
-                if (event.target.tagName === 'IMG') {
-                    selectedShirt.src = event.target.src;
-                    dropdownContainer.classList.remove('show');
-                }
+            dropdownBtns.forEach(function(btn, index) {
+                btn.addEventListener('click', function() {
+                    var container = dropdownContainers[index];
+                    if (container.style.display === "none" || container.style.display === "") {
+                        container.style.display = "grid";
+                    } else {
+                        container.style.display = "none";
+                    }
+                });
+            });
+
+            var camisetaOptions = document.querySelectorAll('.camiseta-option');
+            camisetaOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    var newImage = option.getAttribute('data-image');
+                    selectedShirt.src = newImage;
+                    dropdownContainers[0].style.display = "none";
+                });
+            });
+
+            var sudaderaOptions = document.querySelectorAll('.sudadera-option');
+            sudaderaOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    var newImage = option.getAttribute('data-image');
+                    selectedShirt.src = newImage;
+                    dropdownContainers[1].style.display = "none";
+                });
+            });
+
+            var gorroOptions = document.querySelectorAll('.gorro-option');
+            gorroOptions.forEach(function(option) {
+                option.addEventListener('click', function() {
+                    var newImage = option.getAttribute('data-image');
+                    selectedShirt.src = newImage;
+                    dropdownContainers[2].style.display = "none";
+                });
             });
 
             uploadImage.addEventListener('change', function(event) {
