@@ -223,7 +223,6 @@
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             width: 100%;
-            max-width: 400px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -385,19 +384,19 @@
                 </li>
             </ul>
         </div>
-        <div class="product-customization">
+        <div class="product-customization" style="width: 100%;">
             <div class="product-image">
                 <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta" id="selected-shirt">
                 <div id="uploaded-images"></div>
             </div>
-            <div class="product-details">
+            <div class="product-details" style="width: 100%;">
                 <p class="price">12,99 €</p>
                 <div class="image-upload">
-                    <input type="file" id="upload-image" accept="image/*">
+                    <input type="file" id="upload-image" accept="image/*" style="width: 100%;">
                     <label for="upload-image">Subir Imagen</label>
                 </div>
                 <p>Nº de imágenes: <span id="image-count">0</span></p>
-                <div class="product-info">
+                <div class="product-info" style="text-align: center;">
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre">
                     <label for="coleccion">Colección:</label>
@@ -409,7 +408,7 @@
                     </select>
                 </div>
                 <p>P.V.P: <span class="pvp">99,99 €</span></p>
-                <div class="description">
+                <div class="description" style="width: 100%;">
                     <label for="descripcion">Descripción:</label>
                     <textarea id="descripcion" rows="4"></textarea>
                 </div>
