@@ -734,6 +734,29 @@
     background-color: #333;
 }
 
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.create-product-button {
+    padding: 10px 15px;
+    background-color: #3C3C3B;
+    color: #EDEDED;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px; /* Add some margin to separate from h1 */
+}
+
+.create-product-button:hover {
+    background-color: #333;
+    color: rgb(251, 230, 169);
+}
 
 
 @media (max-width: 1400px) {
