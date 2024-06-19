@@ -110,5 +110,23 @@ $(document).ready(function(){
                 updateCarousel();
             }
         });
+
+        // Agregar soporte táctil
+        $section.find('.carousel-container').swipe({
+            swipeLeft: function(event, direction, distance, duration, fingerCount) {
+                var maxIndex = itemsCount - visibleItems; // Recalcula el máximo índice permitido
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            },
+            swipeRight: function(event, direction, distance, duration, fingerCount) {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            },
+            excludedElements: $.fn.swipe.defaults.excludedElements + ", button, input, select, textarea, .noSwipe"
+        });
     });
 });
