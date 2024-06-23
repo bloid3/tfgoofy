@@ -167,8 +167,12 @@
 }
 
 .hero-img {
+    position: relative;
     width: 100%;
-    height: 90%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
@@ -176,7 +180,10 @@
     width: 100%;
     height: auto;
     object-fit: cover;
-    transform: translateY(-20%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .items-section {
@@ -785,7 +792,7 @@
     }
 
     .hero {
-        height: 670px;
+        height: 700px;
     }
 
     .mid-section {
