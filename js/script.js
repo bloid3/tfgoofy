@@ -106,7 +106,8 @@ $(document).ready(function(){
                 $(this).text('VER MENOS');
             } else {
                 itemsSection.animate({ height: '850px' }, 500); // La altura original del contenedor
-                carruselControls.show();
+				$(this).text('VER TODO');
+				carruselControls.show();
                 updateCarousel();
             }
         });

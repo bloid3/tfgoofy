@@ -280,6 +280,10 @@
     overflow: hidden; /* ensures images don't spill out of the container */
 }
 
+.card-img:hover {
+	transform: scale(1.05);
+}
+
 .card-img img {
     width: 100%;
     height: 300px;
