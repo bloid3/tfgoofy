@@ -1,134 +1,114 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mis Productos - Phantom Project</title>
-    <link rel="stylesheet" href="styles/styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    />
-  </head>
-  <body>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+<body>
     <header class="site-header">
-      <nav class="navbar">
-        <div class="nav-logo">
-          <a href="index.html"
-            ><img src="img/logos/isologo_blanco.png" alt="Logo"
-          /></a>
+        <nav class="navbar">
+            <div class="nav-logo">
+                <a href="index.html"><img src="img/logos/isologo_blanco.png" alt="Logo"></a>
+            </div>
+            <div class="nav-items">
+                <a href="colecciones.html">Colecciones</a>
+                <a href="index.html"><b>Tienda</b></a>
+                <a href="comunidad.html">Comunidad</a>
+            </div>
+            <div class="nav-icons">
+                <a href="#"><img src="img/iconos/buscar.png" alt="Search"></a>
+                <a href="perfil.html"><img src="img/iconos/perfil.png" alt="Account"></a>
+                <a href="#"><img src="img/iconos/cart.png" alt="Cart"></a>
+                <button class="menu-toggle">
+                    <img src="img/iconos/menu.png" alt="Menu" />
+                </button>
+            </div>
+        </nav>
+        <div class="search-bar-container">
+            <input type="text" placeholder="Buscar...">
         </div>
-        <div class="nav-items">
-          <a href="colecciones.html">Colecciones</a>
-          <a href="index.html"><b>Tienda</b></a>
-          <a href="comunidad.html">Comunidad</a>
+        <div class="menu-container">
+            <button class="close-menu"><b>X</b></button>
+            <a href="#tienda"><b>Tienda</b></a>
+            <a href="#colecciones">Colecciones</a>
+            <a href="#comunidad">Comunidad</a>
         </div>
-        <div class="nav-icons">
-          <a href="#"><img src="img/iconos/buscar.png" alt="Search" /></a>
-          <a href="perfil.html"
-            ><img src="img/iconos/perfil.png" alt="Account"
-          /></a>
-          <a href="#"><img src="img/iconos/cart.png" alt="Cart" /></a>
-          <button class="menu-toggle">
-            <img src="img/iconos/menu.png" alt="Menu" />
-          </button>
-        </div>
-      </nav>
-      <div class="search-bar-container">
-        <input type="text" placeholder="Buscar..." />
-      </div>
-      <div class="menu-container">
-        <button class="close-menu"><b>X</b></button>
-        <a href="#tienda"><b>Tienda</b></a>
-        <a href="#colecciones">Colecciones</a>
-        <a href="#comunidad">Comunidad</a>
-      </div>
-      <div class="overlay"></div>
+        <div class="overlay"></div>
     </header>
 
     <main>
-		<div class="products-container">
-		  <div class="products-header">
-			<h1>Mis Productos</h1>
-			<a href="customizacion.html" class="create-product-button"
-			  >Crea tu producto</a
-			>
-		  </div>
-        <div class="product-item">
-          <div class="product-img">
-            <img src="img/ropa/camiseta1.webp" alt="Camiseta Be Free" />
-          </div>
-          <div class="product-info">
-            <h2>Camiseta Be Free</h2>
-            <p>34,99€</p>
-            <button class="edit-button">Editar</button>
-            <button class="delete-button">Eliminar</button>
-          </div>
+        <div class="products-container">
+            <div class="products-header">
+                <h1>Mis Productos</h1>
+                <a href="customizacion.html" class="create-product-button">Crea tu producto</a>
+            </div>
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="img/PRODUCTOS-20240623T092907Z-001/PRODUCTOS/Camiseta Can you see me now_delante.png" alt="Camiseta Can you see me now">
+                </div>
+                <div class="product-info">
+                    <h2>Camiseta Can you see me now</h2>
+                    <p>34,99€</p>
+                    <button class="edit-button">Editar</button>
+                    <button class="delete-button">Eliminar</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="img/PRODUCTOS-20240623T092907Z-001/PRODUCTOS/Camiseta PH4NT0M Project blanca_delante.png" alt="Camiseta PH4NT0M Project Blanca">
+                </div>
+                <div class="product-info">
+                    <h2>Camiseta PH4NT0M Project Blanca</h2>
+                    <p>34,99€</p>
+                    <button class="edit-button">Editar</button>
+                    <button class="delete-button">Eliminar</button>
+                </div>
+            </div>
+            <div class="product-item">
+                <div class="product-img">
+                    <img src="img/PRODUCTOS-20240623T092907Z-001/PRODUCTOS/Sudadera PH4NT0M Project negra_delante.png" alt="Sudadera PH4NT0M Project Negra">
+                </div>
+                <div class="product-info">
+                    <h2>Sudadera PH4NT0M Project Negra</h2>
+                    <p>49,99€</p>
+                    <button class="edit-button">Editar</button>
+                    <button class="delete-button">Eliminar</button>
+                </div>
+            </div>
         </div>
-        <div class="product-item">
-          <div class="product-img">
-            <img src="img/ropa/camiseta2.webp" alt="Camiseta Be Free Rosa" />
-          </div>
-          <div class="product-info">
-            <h2>Camiseta Be Free Rosa</h2>
-            <p>34,99€</p>
-            <button class="edit-button">Editar</button>
-            <button class="delete-button">Eliminar</button>
-          </div>
-        </div>
-        <div class="product-item">
-          <div class="product-img">
-            <img src="img/ropa/sudadera1.webp" alt="Sudadera Y2K" />
-          </div>
-          <div class="product-info">
-            <h2>Sudadera Y2K</h2>
-            <p>49,99€</p>
-            <button class="edit-button">Editar</button>
-            <button class="delete-button">Eliminar</button>
-          </div>
-        </div>
-      </div>
     </main>
 
     <footer class="site-footer">
-      <div class="footer-top-section">
-        <div class="footer-logo">
-          <img src="img/logos/banner.png" alt="PH4NTOM PROJECT Logo" />
+        <div class="footer-top-section">
+            <div class="footer-logo">
+                <img src="img/logos/banner.png" alt="PH4NTOM PROJECT Logo">
+            </div>
+            <div class="footer-newsletter">
+                <input type="email" placeholder="Email">
+                <button type="submit">SUSCRIBIRSE</button>
+            </div>
         </div>
-        <div class="footer-newsletter">
-          <input type="email" placeholder="Email" />
-          <button type="submit">SUSCRIBIRSE</button>
+        <div class="footer-bottom-section">
+            <div class="footer-social-icons">
+                <a href="your_instagram_url" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="your_tiktok_url" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="your_twitter_url" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="your_youtube_url" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="contacto.html">CONTACTO</a>
+                <a href="devoluciones.html">DEVOLUCIONES</a>
+                <a href="envios.html">ENVIOS</a>
+                <a href="link_to_privacy">PRIVACIDAD</a>
+                <a href="link_to_terms">TÉRMINOS Y CONDICIONES</a>
+            </div>
         </div>
-      </div>
-      <div class="footer-bottom-section">
-        <div class="footer-social-icons">
-          <a href="your_instagram_url" class="social-icon"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="your_tiktok_url" class="social-icon"
-            ><i class="fab fa-tiktok"></i
-          ></a>
-          <a href="your_twitter_url" class="social-icon"
-            ><i class="fab fa-twitter"></i
-          ></a>
-          <a href="your_youtube_url" class="social-icon"
-            ><i class="fab fa-youtube"></i
-          ></a>
-        </div>
-        <div class="footer-links">
-          <a href="contacto.html">CONTACTO</a>
-          <a href="devoluciones.html">DEVOLUCIONES</a>
-          <a href="envios.html">ENVIOS</a>
-          <a href="link_to_privacy">PRIVACIDAD</a>
-          <a href="link_to_terms">TÉRMINOS Y CONDICIONES</a>
-        </div>
-      </div>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/script.js"></script>

@@ -134,11 +134,19 @@
         /* Main Customization Page */
         .customization-page {
             display: flex;
+            flex-direction: column;
             padding: 20px;
         }
 
+        .customization-container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+        }
+
         .sidebar {
-            width: 20%;
+            width: 15%;
             background: #f5f5f5;
             padding: 20px;
         }
@@ -179,22 +187,22 @@
         }
 
         .product-customization {
-            width: 80%;
+            width: 85%;
             padding: 20px;
+            height: 600px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             align-items: center;
         }
 
         .product-image {
             position: relative;
-            margin-bottom: 40px; /* Increased margin for more space */
-            width: 300px;
-            height: 300px;
+            margin-bottom: 40px;
+            width: 40%;
         }
 
         .product-image img {
-            width: 100%;
+            width: 85%;
             height: auto;
         }
 
@@ -219,13 +227,67 @@
 
         .product-details {
             padding: 20px;
+            height: 600px;
             background: #f5f5f5;
             border-radius: 5px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 100%;
+            width: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
+            margin-right: 0;
+        }
+
+        .seccion-enviar {
+			margin: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background: #f5f5f5;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .producto-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .producto-info img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .producto-detalles {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .producto-detalles p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .producto-pvp {
+            display: flex;
+            align-items: center;
+        }
+
+        .producto-pvp label {
+            margin-right: 5px;
+            font-size: 1rem;
+        }
+
+        .producto-pvp input {
+            width: 80px;
+            padding: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            margin-right: 20px;
         }
 
         .product-details p {
@@ -235,6 +297,8 @@
 
         .image-upload {
             margin-bottom: 10px;
+            width: 75%;
+            text-align: center;
         }
 
         .image-upload input {
@@ -243,10 +307,11 @@
 
         .image-upload label {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 30px 30px;
             background: #3C3C3B;
             color: #EDEDED;
             cursor: pointer;
+            width: 100%;
         }
 
         .product-info {
@@ -270,13 +335,17 @@
             border-radius: 5px;
         }
 
-		.description textarea {
-			width: 100%;
-		}
-
         .product-info textarea {
             resize: vertical;
         }
+		.description {
+			margin: 30px;
+			width: 100%;
+		}
+		.description textarea {
+			width: 100%;
+			height: 200px;
+		}
 
         .submit-button {
             display: block;
@@ -296,11 +365,83 @@
 
         /* Footer */
         .site-footer {
-            background-color: #333;
-            color: #fff;
+			margin-top: 100px;
+            background-color: #333; /* Color de fondo del footer */
+            color: #fff; /* Color del texto */
             font-family: 'Raleway', sans-serif;
-            padding: 20px;
-            text-align: center;
+            padding: 20px 0; /* Espaciado interior */
+        }
+
+        .footer-top-section,
+        .footer-bottom-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10%; /* Espaciado horizontal */
+            margin-top: 3em;
+        }
+
+        .footer-logo img {
+            max-width: 300px; /* Ajusta esto al tamaño de tu logo */
+        }
+
+        .footer-newsletter {
+            display: flex;
+            margin-right: 6.5rem;
+        }
+
+        .footer-newsletter input[type="email"] {
+            padding: 10px;
+            border: none;
+            width: 450px;
+        }
+
+        .footer-newsletter button {
+            padding: 10px 20px;
+            background-color: #555; /* Fondo del botón */
+            font-size: 1em;
+            font-weight: 300;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .footer-newsletter button:hover {
+            color: rgb(251, 230, 169);
+        }
+
+        .footer-social-icons {
+            display: flex;
+            justify-content: center; /* Centra los íconos si hay espacio adicional */
+        }
+
+        .footer-social-icons .social-icon {
+            text-decoration: none;
+            color: #fff;
+            margin-right: 1.5em; /* Espaciado entre íconos */
+            font-size: 1.5em; /* Tamaño de los íconos */
+        }
+
+        .footer-social-icons .social-icon:hover {
+            color: rgb(251, 230, 169);
+        }
+
+        .footer-social-icons .social-icon:last-child {
+            margin-right: 0; /* No hay margen después del último ícono */
+        }
+
+        .footer-links {
+            text-align: right;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+            margin-left: 15px; /* Espaciado entre enlaces */
+        }
+
+        .footer-links a:hover {
+            color: rgb(251, 230, 169);
         }
 
         /* Media Queries */
@@ -350,79 +491,115 @@
     </header>
 
     <main class="customization-page">
-        <div class="sidebar">
-            <ul>
-                <li><button class="dropdown-btn">Camisetas</button>
-                    <div class="dropdown-container">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png" alt="Camiseta 1 Beige" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta 1 Blanca" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png" alt="Camiseta 1 Gris" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png" alt="Camiseta 1 Negra" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png" alt="Camiseta 2 Beige" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png" alt="Camiseta 2 Blanca" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png" alt="Camiseta 2 Gris" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png">
-                        <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png" alt="Camiseta 2 Negra" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png">
+        <div class="customization-container">
+            <div class="sidebar">
+                <ul>
+                    <li><button class="dropdown-btn">Camisetas</button>
+                        <div class="dropdown-container">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png" alt="Camiseta Básica Beige" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BEIGE_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta Básica Blanca" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png" alt="Camiseta Básica Gris" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_GRIS_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png" alt="Camiseta Básica Negra" data-image="custom/CAMISETAS/CAMISETA 1/CAMISETA1_NEGRA_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png" alt="Camiseta Premium Beige" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BEIGE_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png" alt="Camiseta Premium Blanca" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_BLANCA_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png" alt="Camiseta Premium Gris" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_GRIS_DELANTERA.png">
+                            <img class="camiseta-option" src="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png" alt="Camiseta Premium Negra" data-image="custom/CAMISETAS/CAMISETA 2/CAMISETA2_NEGRA_DELANTERA.png">
+                        </div>
+                    </li>
+                    <li><button class="dropdown-btn">Sudaderas</button>
+                        <div class="dropdown-container">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png" alt="Sudadera Básica Beige" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png" alt="Sudadera Básica Blanca" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png" alt="Sudadera Básica Gris" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png" alt="Sudadera Básica Negra" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png" alt="Sudadera Básica Morada" data-image="custom/SUDADERAS/SUDADERA1_MORADA_DELANTERA.png">
+                        </div>
+                    </li>
+                    <li><button class="dropdown-btn">Gorros</button>
+                        <div class="dropdown-container">
+                            <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png" alt="Gorra Básica Beige" data-image="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png">
+                            <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png" alt="Gorra Básica Blanca" data-image="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png">
+                            <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png" alt="Gorra Básica Gris" data-image="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png">
+                            <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png" alt="Gorra Básica Negra" data-image="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png">
+                            <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png" alt="Gorra Básica Morada" data-image="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="product-customization">
+                <div class="product-image">
+                    <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta Básica Blanca" id="selected-shirt">
+                    <div id="uploaded-images"></div>
+                </div>
+                <div class="product-details">
+                    <div class="image-upload">
+                        <input type="file" id="upload-image" accept="image/*">
+                        <label for="upload-image">Subir Imagen</label>
                     </div>
-                </li>
-                <li><button class="dropdown-btn">Sudaderas</button>
-                    <div class="dropdown-container">
-                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png" alt="Sudadera 1 Beige" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BEIGE_DELANTERA.png">
-                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png" alt="Sudadera 1 Blanca" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png">
-                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png" alt="Sudadera 1 Gris" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png">
-                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png" alt="Sudadera 1 Negra" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png">
-                        <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png" alt="Sudadera 1 Morada" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png">
+                    <p>Nº de imágenes: <span id="image-count">0</span></p>
+                    <div class="product-info">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre">
+                        <label for="coleccion">Colección:</label>
+                        <select id="coleccion">
+                            <option value="1">Colección 1</option>
+                            <option value="2">Colección 2</option>
+                            <option value="3">Colección 3</option>
+                            <option value="4">Colección 4</option>
+                        </select>
                     </div>
-                </li>
-                <li><button class="dropdown-btn">Gorros</button>
-                    <div class="dropdown-container">
-                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png" alt="Gorra Beige" data-image="custom/GORROS/GORRA/GORRA_BEIGE_DELANTERA.png">
-                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png" alt="Gorra Blanca" data-image="custom/GORROS/GORRA/GORRA_BLANCA_DELANTERA.png">
-                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png" alt="Gorra Gris" data-image="custom/GORROS/GORRA/GORRA_GRIS_DELANTERA.png">
-                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png" alt="Gorra Negra" data-image="custom/GORROS/GORRA/GORRA_NEGRA_DELANTERA.png">
-                        <img class="gorro-option" src="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png" alt="Gorra Morada" data-image="custom/GORROS/GORRA/GORRA_MORADA_DELANTERA.png">
+                    <div class="description">
+                        <label for="descripcion">Descripción:</label>
+                        <textarea id="descripcion" rows="4"></textarea>
                     </div>
-                </li>
-            </ul>
+                </div>
+            </div>
         </div>
-        <div class="product-customization" style="width: 100%;">
-            <div class="product-image">
-                <img src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Camiseta" id="selected-shirt">
-                <div id="uploaded-images"></div>
+        <div class="seccion-enviar">
+            <div class="producto-info">
+                <img id="producto-imagen" src="custom/CAMISETAS/CAMISETA 1/CAMISETA1_BLANCA_DELANTERA.png" alt="Producto Seleccionado">
+                <div class="producto-detalles">
+                    <p id="nombre-producto">Camiseta Básica Blanca</p>
+                    <p id="precio-producto">12,99 €</p>
+                </div>
             </div>
-            <div class="product-details" style="width: 100%;">
-                <p class="price">12,99 €</p>
-                <div class="image-upload">
-                    <input type="file" id="upload-image" accept="image/*" style="width: 100%;">
-                    <label for="upload-image">Subir Imagen</label>
-                </div>
-                <p>Nº de imágenes: <span id="image-count">0</span></p>
-                <div class="product-info" style="text-align: center;">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre">
-                    <label for="coleccion">Colección:</label>
-                    <select id="coleccion">
-                        <option value="1">Colección 1</option>
-                        <option value="2">Colección 2</option>
-                        <option value="3">Colección 3</option>
-                        <option value="4">Colección 4</option>
-                    </select>
-                </div>
-                <p>P.V.P: <span class="pvp">99,99 €</span></p>
-                <div class="description" style="width: 100%;">
-                    <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion" rows="4"></textarea>
-                </div>
-                <button type="button" class="submit-button">Enviar</button>
+            <div class="producto-pvp">
+                <label for="pvp">P.V.P:</label>
+                <input type="text" id="pvp" value="24,99€" readonly>
             </div>
+            <button type="button" class="submit-button">Enviar</button>
         </div>
     </main>
 
     <footer class="site-footer">
-        <p>&copy; 2024 Phantom Project. Todos los derechos reservados.</p>
-    </footer>
-	<script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+        <div class="footer-top-section">
+            <div class="footer-logo">
+                <img src="img/logos/banner.png" alt="PH4NTOM PROJECT Logo">
+            </div>
+            <div class="footer-newsletter">
+                <input type="email" placeholder="Email" />
+                <button type="submit">SUSCRIBIRSE</button>
+            </div>
+        </div>
+        <div class="footer-bottom-section"> 
+            <div class="footer-social-icons">
+                <a href="your_instagram_url" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="your_tiktok_url" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                <a href="your_twitter_url" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="your_youtube_url" class="social-icon"><i class="fab fa-youtube"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="contacto.html">CONTACTO</a>
+                <a href="devoluciones.html">DEVOLUCIONES</a>
+                <a href="envios.html">ENVIOS</a> 
+                <a href="link_to_returns">PRIVACIDAD</a>
+                <a href="link_to_returns">TÉRMINOS Y CONDICIONES</a>
+            </div>
+        </div>
+    </footer>  
+
+    <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
     <script>
-        console.log("Checking if interact is loaded:", typeof interact !== 'undefined');
         document.addEventListener('DOMContentLoaded', function() {
             var dropdownBtns = document.querySelectorAll('.dropdown-btn');
             var dropdownContainers = document.querySelectorAll('.dropdown-container');
@@ -430,6 +607,9 @@
             var uploadImage = document.getElementById('upload-image');
             var uploadedImagesContainer = document.getElementById('uploaded-images');
             var imageCountSpan = document.getElementById('image-count');
+            var nombreProducto = document.getElementById('nombre-producto');
+            var precioProducto = document.getElementById('precio-producto');
+            var productoImagen = document.getElementById('producto-imagen');
             var imageCount = 0;
 
             dropdownContainers.forEach(function(container) {
@@ -451,7 +631,13 @@
             camisetaOptions.forEach(function(option) {
                 option.addEventListener('click', function() {
                     var newImage = option.getAttribute('data-image');
+                    var nombre = option.getAttribute('alt').split(' ')[2]; // Adjust according to your alt attribute
+                    var precio = '12,99 €'; // Set the price based on your product logic
+
                     selectedShirt.src = newImage;
+                    nombreProducto.textContent = nombre;
+                    precioProducto.textContent = precio;
+                    productoImagen.src = newImage;
                     dropdownContainers[0].style.display = "none";
                 });
             });
@@ -460,7 +646,13 @@
             sudaderaOptions.forEach(function(option) {
                 option.addEventListener('click', function() {
                     var newImage = option.getAttribute('data-image');
+                    var nombre = option.getAttribute('alt').split(' ')[1]; // Adjust according to your alt attribute
+                    var precio = '24,99 €'; // Set the price based on your product logic
+
                     selectedShirt.src = newImage;
+                    nombreProducto.textContent = nombre;
+                    precioProducto.textContent = precio;
+                    productoImagen.src = newImage;
                     dropdownContainers[1].style.display = "none";
                 });
             });
@@ -469,7 +661,13 @@
             gorroOptions.forEach(function(option) {
                 option.addEventListener('click', function() {
                     var newImage = option.getAttribute('data-image');
+                    var nombre = option.getAttribute('alt').split(' ')[1]; // Adjust according to your alt attribute
+                    var precio = '9,99 €'; // Set the price based on your product logic
+
                     selectedShirt.src = newImage;
+                    nombreProducto.textContent = nombre;
+                    precioProducto.textContent = precio;
+                    productoImagen.src = newImage;
                     dropdownContainers[2].style.display = "none";
                 });
             });

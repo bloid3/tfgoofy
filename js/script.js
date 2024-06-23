@@ -106,9 +106,28 @@ $(document).ready(function(){
                 $(this).text('VER MENOS');
             } else {
                 itemsSection.animate({ height: '850px' }, 500); // La altura original del contenedor
-                carruselControls.show();
+				$(this).text('VER TODO');
+				carruselControls.show();
                 updateCarousel();
             }
+        });
+
+        // Agregar soporte táctil
+        $section.find('.carousel-container').swipe({
+            swipeLeft: function(event, direction, distance, duration, fingerCount) {
+                var maxIndex = itemsCount - visibleItems; // Recalcula el máximo índice permitido
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            },
+            swipeRight: function(event, direction, distance, duration, fingerCount) {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            },
+            excludedElements: $.fn.swipe.defaults.excludedElements + ", button, input, select, textarea, .noSwipe"
         });
     });
 });
