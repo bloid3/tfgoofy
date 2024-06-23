@@ -512,7 +512,7 @@
                             <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png" alt="Sudadera Básica Blanca" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_BLANCA_DELANTERA.png">
                             <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png" alt="Sudadera Básica Gris" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_GRIS_DELANTERA.png">
                             <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png" alt="Sudadera Básica Negra" data-image="custom/SUDADERAS/SUDADERA 1/SUDADERA1_NEGRA_DELANTERA.png">
-                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png" alt="Sudadera Básica Morada" data-image="custom/SUDADERAS/SUDADERA1_MORADA_DELANTERA.png">
+                            <img class="sudadera-option" src="custom/SUDADERAS/SUDADERA 1/SUDADERA1_MORADA_DELANTERA.png" alt="Sudadera Básica Morada" data-image="custom\SUDADERAS\SUDADERA 1\SUDADERA1_MORADA_DELANTERA.png">
                         </div>
                     </li>
                     <li><button class="dropdown-btn">Gorros</button>
@@ -631,7 +631,7 @@
             camisetaOptions.forEach(function(option) {
                 option.addEventListener('click', function() {
                     var newImage = option.getAttribute('data-image');
-                    var nombre = option.getAttribute('alt').split(' ')[2]; // Adjust according to your alt attribute
+                    var nombre = option.getAttribute('alt'); // Adjust according to your alt attribute
                     var precio = '12,99 €'; // Set the price based on your product logic
 
                     selectedShirt.src = newImage;
@@ -646,7 +646,7 @@
             sudaderaOptions.forEach(function(option) {
                 option.addEventListener('click', function() {
                     var newImage = option.getAttribute('data-image');
-                    var nombre = option.getAttribute('alt').split(' ')[1]; // Adjust according to your alt attribute
+                    var nombre = option.getAttribute('alt'); // Adjust according to your alt attribute
                     var precio = '24,99 €'; // Set the price based on your product logic
 
                     selectedShirt.src = newImage;
