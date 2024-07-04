@@ -770,6 +770,8 @@
 }
 
 
+/* General styles for responsiveness */
+/* General styles for responsiveness */
 @media (max-width: 1400px) {
     .nav-items {
         display: none;
@@ -803,10 +805,13 @@
         flex: 0 0 calc(25% - 40px);
     }
 
-	.site-footer img {
-		width: 200px;
-	
-	}
+    .site-footer img {
+        width: 200px;
+    }
+
+    .create-product-button {
+        display: none; /* Ocultar el botón "Crea tu producto" en tablet */
+    }
 }
 
 @media (max-width: 1024px) {
@@ -837,9 +842,9 @@
         bottom: 20px;
     }
 
-	.footer-newsletter {
-		margin-right: 0;
-	}
+    .footer-newsletter {
+        margin-right: 0;
+    }
 
     .footer-newsletter input[type="email"] {
         width: 100%;
@@ -855,6 +860,10 @@
 
     .footer-links {
         margin-top: 20px;
+    }
+
+    .create-product-button {
+        display: none; /* Ocultar el botón "Crea tu producto" en tablet */
     }
 }
 
@@ -876,6 +885,10 @@
         margin: 20px auto;
     }
 
+    .carousel-container {
+        justify-content: center; /* Centrar las tarjetas */
+    }
+
     .footer-top-section,
     .footer-bottom-section {
         padding: 0 5%;
@@ -892,7 +905,6 @@
         flex-direction: column;
         align-items: center;
         width: 100%;
-
     }
 
     .footer-newsletter input[type="email"] {
@@ -942,6 +954,10 @@
     .section-title h1 {
         font-size: 1.5rem;
     }
+
+    .create-product-button {
+        display: none; /* Ocultar el botón "Crea tu producto" en móvil */
+    }
 }
 
 @media (max-width: 480px) and (pointer: coarse) {
@@ -973,6 +989,10 @@
     .card-holder {
         flex: 0 0 100%;
         margin: 10px auto;
+    }
+
+    .carousel-container {
+        justify-content: center; /* Centrar las tarjetas */
     }
 
     .footer-newsletter {
@@ -1044,8 +1064,76 @@
     .section-title h1 {
         font-size: 1.2rem;
     }
+
+    .create-product-button {
+        display: none; /* Ocultar el botón "Crea tu producto" en móvil */
+    }
+
+    /* Ajustes específicos para la página de productos */
+    .products-container {
+        padding: 0 1em;
+    }
+
+    .product-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .product-img {
+        margin-bottom: 10px;
+    }
+
+    .product-info {
+        width: 100%;
+    }
+
+    /* Ajustes específicos para la página de detalles */
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .vertical-carousel {
+        display: none; /* Ocultar el carrusel vertical en móvil */
+    }
+
+    .product-image {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .product-info-detalle {
+        width: 100%;
+    }
+
+    .complete-the-look {
+        padding: 10px 0;
+    }
+
+    .complete-the-look h2 {
+        font-size: 1.2rem;
+    }
+
+    .related-products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-holder {
+        width: 80%;
+        margin-bottom: 10px;
+    }
 }
 
+
+/* Ensure images are not cut off */
+.card-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
 
 
