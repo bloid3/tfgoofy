@@ -769,6 +769,205 @@
     color: rgb(251, 230, 169);
 }
 
+/* Ensure images are not cut off */
+.card-img img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+
+
+/* Detalles del Producto */
+.product-details {
+    display: flex;
+	width: 100%;
+    justify-content: center; /* Centra horizontalmente .product-info dentro de .product-details */
+    align-items: center; /* Centra verticalmente .product-info dentro de .product-details */
+    margin-top: 40px;
+}
+
+.product-info-detalle {
+    flex: 1;
+	width: 33%;
+	display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centra verticalmente los elementos dentro de .product-info */
+    align-items: left; /* Centra horizontalmente los elementos dentro de .product-info */
+	text-align: left;
+}
+
+.product-info-detalle h1 {
+	width: 100%;
+	display: flex;
+	font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.product-info-detalle  span{
+	width: 100%;
+	text-align: left;
+	font-size: 1rem;
+	bottom: 0;
+}
+
+.product-info-detalle p {
+	width: 100%;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.product-info-detalle > p:nth-of-type(2) {
+	font-size: 2.5rem;
+	width: 100%;
+}
+
+.add-to-cart-btn {
+	width: 40%;
+	background-color: #333;
+	color: #fff;
+	border: none;
+	padding: 15px 30px;
+	font-size: 1.7rem;
+	cursor: pointer;
+	text-align: center;
+	text-transform: uppercase;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: flex;
+	font-weight: bold;
+}
+
+.add-to-cart-btn:hover {
+	background-color: #555;
+	color: #ddd;
+}
+
+.product-sizes {
+	width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+.product-info-detalle p:last-of-type {
+	font-size: 1rem;
+}
+
+.product-sizes button {
+    padding: 5px 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.product-sizes button:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Completa el Look */
+.complete-the-look {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.complete-the-look h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.related-products {
+    display: flex;
+    gap: 20px;
+}
+
+.related-products .card-holder {
+    flex: 1;
+    max-width: 300px;
+}
+
+/* Productos Relacionados */
+.related-products-carousel {
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.related-products-carousel h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.product-carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.product-carousel .card-holder {
+    min-width: 200px;
+    flex: 1;
+}
+
+.product-image {
+    flex: 1;
+	width: 50%;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-description {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.vertical-carousel {
+    display: flex;
+    padding-right: 30px;
+    flex-direction: column;
+    align-items: center;
+	width: 17%;
+}
+
+.carousel-container-detalle {
+    position: relative;
+    height: 330px; /* Ajusta la altura para mostrar 3 imágenes de 120px cada una */
+    overflow: hidden; /* Asegura que las imágenes fuera de esta área se oculten */
+}
+
+.carousel-images {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s ease; /* Añade una transición suave */
+}
+
+.carousel-images img {
+    width: 100px; /* Ajusta el ancho según sea necesario */
+    height: 100px; /* Ajusta la altura según sea necesario */
+    object-fit: cover;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.carousel-prev, .carousel-next {
+    background-color: #3c3c3c;
+    color: white;
+    border: none;
+    padding: 5px;
+    margin:20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-prev:hover, .carousel-next:hover {
+    background-color: #555;
+}
+
 
 /* General styles for responsiveness */
 /* General styles for responsiveness */
@@ -1096,7 +1295,7 @@
     }
 
     .vertical-carousel {
-        display: none; /* Ocultar el carrusel vertical en móvil */
+        display: none;
     }
 
     .product-image {
@@ -1128,162 +1327,5 @@
 }
 
 
-/* Ensure images are not cut off */
-.card-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
 
-
-
-
-/* Detalles del Producto */
-.product-details {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente .product-info dentro de .product-details */
-    align-items: center; /* Centra verticalmente .product-info dentro de .product-details */
-    margin-top: 40px;
-    margin-left: 185px;
-}
-
-.product-info-detalle {
-    flex: 1;
-    margin-left: 30px;
-    margin-right: 30px;
-    max-width: 230px; /* Aumenta el tamaño máximo para mayor visibilidad */
-    display: flex;
-    flex-direction: column; /* Organiza los elementos hijos en una columna */
-    justify-content: center; /* Centra verticalmente los elementos dentro de .product-info */
-    align-items: center; /* Centra horizontalmente los elementos dentro de .product-info */
-}
-
-.product-info-detalle h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.product-info-detalle p {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.product-sizes {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.product-sizes button {
-    padding: 5px 10px;
-    border: 1px solid #333;
-    background-color: #fff;
-    cursor: pointer;
-}
-
-.product-sizes button:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Completa el Look */
-.complete-the-look {
-    margin-top: 40px;
-    padding: 20px;
-}
-
-.complete-the-look h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.related-products {
-    display: flex;
-    gap: 20px;
-}
-
-.related-products .card-holder {
-    flex: 1;
-    max-width: 300px;
-}
-
-/* Productos Relacionados */
-.related-products-carousel {
-    margin-top: 40px;
-    padding: 20px;
-}
-
-.related-products-carousel h2 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-}
-
-.product-carousel {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-}
-
-.product-carousel .card-holder {
-    min-width: 200px;
-    flex: 1;
-}
-
-.product-image {
-    flex: 1;
-    max-width: 400px;
-}
-
-.product-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-.product-description {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.vertical-carousel {
-    display: flex;
-    padding-right: 30px;
-    flex-direction: column;
-    align-items: center;
-    width: 120px; /* Ajusta el ancho según sea necesario */
-}
-
-.carousel-container-detalle {
-    position: relative;
-    height: 330px; /* Ajusta la altura para mostrar 3 imágenes de 120px cada una */
-    overflow: hidden; /* Asegura que las imágenes fuera de esta área se oculten */
-}
-
-.carousel-images {
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease; /* Añade una transición suave */
-}
-
-.carousel-images img {
-    width: 100px; /* Ajusta el ancho según sea necesario */
-    height: 100px; /* Ajusta la altura según sea necesario */
-    object-fit: cover;
-    border: 1px solid #ccc;
-    margin-bottom: 10px;
-}
-
-.carousel-prev, .carousel-next {
-    background-color: #3c3c3c;
-    color: white;
-    border: none;
-    padding: 5px;
-    margin:20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-prev:hover, .carousel-next:hover {
-    background-color: #555;
-}
 
