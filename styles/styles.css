@@ -968,9 +968,6 @@
     background-color: #555;
 }
 
-
-/* General styles for responsiveness */
-/* General styles for responsiveness */
 @media (max-width: 1400px) {
     .nav-items {
         display: none;
@@ -1014,6 +1011,62 @@
 }
 
 @media (max-width: 1024px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; /* Centrar todo horizontal y verticalmente */
+    }
+
+    .vertical-carousel {
+        display: none;
+    }
+
+    .product-image {
+        width: 80%;
+    }
+
+    .product-info-detalle {
+        width: 80%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar horizontalmente */
+        justify-content: center; /* Centrar verticalmente */
+    }
+
+    .product-info-detalle > * {
+        width: 100%;
+        margin: 10px 0; /* Añadido para un espaciado uniforme */
+        text-align: center; /* Asegurar que el texto esté centrado */
+    }
+
+    .product-info-detalle h1,
+    .product-info-detalle span,
+    .product-info-detalle p,
+    .product-info-detalle .product-sizes,
+    .product-info-detalle button {
+        width: 100%; /* Asegurar que todos los hijos tengan 100% de ancho */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+    }
+
+    .product-sizes {
+        display: flex;
+        justify-content: center; /* Centrar horizontalmente */
+        width: 100%;
+    }
+
+    .related-products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .related-products .card-holder {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
     .hero {
         height: 550px;
     }
@@ -1066,232 +1119,65 @@
     }
 }
 
-@media (max-width: 768px) and (pointer: coarse) {
-    .hero {
-        height: 450px;
-    }
-
-    .nav-icons {
-        margin-right: 0.5rem;
-    }
-
-    .mid-section {
-        margin-left: 1em;
-    }
-
-    .card-holder {
-        flex: 0 0 calc(100% - 20px); /* Mostrar una tarjeta por fila */
-        margin: 20px auto;
-    }
-
-    .carousel-container {
-        justify-content: center; /* Centrar las tarjetas */
-    }
-
-    .footer-top-section,
-    .footer-bottom-section {
-        padding: 0 5%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-top-section {
-        margin-top: 2em;
-    }
-
-    .footer-newsletter {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .footer-newsletter input[type="email"] {
-        width: 90%;
-        margin-bottom: 10px;
-    }
-
-    .footer-links {
-        margin-top: 10px;
-    }
-
-    .section-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .carrusel-controls {
-        display: none; /* Ocultar controles del carrusel en dispositivos táctiles */
-    }
-
-    .carrusel-controls button {
-        height: 30px;
-        width: 30px;
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    .view-all {
-        display: none; /* Ocultar botones VER TODO en dispositivos táctiles */
-    }
-
-    /* Ajustes específicos para la página de camisetas */
-    .items-section {
-        height: auto;
-        padding: 0 1em;
-    }
-
-    .hero {
-        height: auto;
-    }
-
-    .hero-img img {
-        height: auto;
-        transform: translateY(0);
-    }
-
-    .section-title h1 {
-        font-size: 1.5rem;
-    }
-
-    .create-product-button {
-        display: none; /* Ocultar el botón "Crea tu producto" en móvil */
-    }
-}
-
-@media (max-width: 480px) and (pointer: coarse) {
-    .navbar {
-        height: 80px;
-        padding: 0.5rem;
-    }
-
-    .nav-logo img {
-        width: 40px;
-    }
-
-    .nav-icons a img {
-        width: 15px;
-    }
-
-    .menu-toggle img {
-        width: 15px;
-    }
-
-    .hero {
-        height: 350px;
-    }
-
-    .mid-section {
-        margin-left: 0.5em;
-    }
-
-    .card-holder {
-        flex: 0 0 100%;
-        margin: 10px auto;
-    }
-
-    .carousel-container {
-        justify-content: center; /* Centrar las tarjetas */
-    }
-
-    .footer-newsletter {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .footer-newsletter input[type="email"] {
-        width: 50%;
-        margin-bottom: 10px;
-    }
-
-    .footer-social-icons {
-        margin-top: 10px;
-    }
-
-    .footer-top-section,
-    .footer-bottom-section {
-        padding: 0 5%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-top-section {
-        margin-top: 2em;
-    }
-
-    .footer-links {
-        margin-top: 10px;
-    }
-
-    .section-info {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .carrusel-controls {
-        display: none; /* Ocultar controles del carrusel en dispositivos táctiles */
-    }
-
-    .carrusel-controls button {
-        height: 25px;
-        width: 25px;
-        background-color: rgba(255, 255, 255, 0.8);
-    }
-
-    .view-all {
-        display: none; /* Ocultar botones VER TODO en dispositivos táctiles */
-    }
-
-    /* Ajustes específicos para la página de camisetas */
-    .items-section {
-        height: auto;
-        padding: 0 0.5em;
-    }
-
-    .hero {
-        height: auto;
-    }
-
-    .hero-img img {
-        height: auto;
-        transform: translateY(0);
-    }
-
-    .section-title h1 {
-        font-size: 1.2rem;
-    }
-
-    .create-product-button {
-        display: none; /* Ocultar el botón "Crea tu producto" en móvil */
-    }
-
-    /* Ajustes específicos para la página de productos */
-    .products-container {
-        padding: 0 1em;
-    }
-
-    .product-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .product-img {
-        margin-bottom: 10px;
-    }
-
-    .product-info {
-        width: 100%;
-    }
-
-    /* Ajustes específicos para la página de detalles */
+@media (max-width: 768px) {
     .product-details {
         flex-direction: column;
         align-items: center;
+    }
+
+    .vertical-carousel {
+        display: none;
+    }
+
+    .product-image {
+        width: 100%;
+    }
+
+    .product-info-detalle {
+        width: 100%;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar horizontalmente */
+        justify-content: center; /* Centrar verticalmente */
+		padding: 20px;
+    }
+
+    .product-info-detalle > * {
+        width: 100%;
+        margin: 10px 10px 0; /* Añadido para un espaciado uniforme */
+        text-align: center; /* Asegurar que el texto esté centrado */
+    }
+
+    .product-info-detalle h1,
+    .product-info-detalle span,
+    .product-info-detalle p,
+    .product-info-detalle .product-sizes,
+    .product-info-detalle button {
+        width: 100%; /* Asegurar que todos los hijos tengan 100% de ancho */
+    }
+
+    .product-sizes {
+        display: flex;
+        justify-content: center; /* Centrar horizontalmente */
+        width: 100%;
+    }
+
+    .related-products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .related-products .card-holder {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-details {
+        flex-direction: column;
+        align-items: center;
     }
 
     .vertical-carousel {
@@ -1304,6 +1190,31 @@
     }
 
     .product-info-detalle {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar horizontalmente */
+        justify-content: center; /* Centrar verticalmente */
+    }
+
+    .product-info-detalle > * {
+        width: 100%;
+        margin: 10px 0; /* Añadido para un espaciado uniforme */
+        text-align: center; /* Asegurar que el texto esté centrado */
+    }
+
+    .product-info-detalle h1,
+    .product-info-detalle span,
+    .product-info-detalle p,
+    .product-info-detalle .product-sizes,
+    .product-info-detalle button {
+        width: 100%; /* Asegurar que todos los hijos tengan 100% de ancho */
+    }
+
+    .product-sizes {
+        display: flex;
+        justify-content: center; /* Centrar horizontalmente */
         width: 100%;
     }
 
@@ -1320,12 +1231,9 @@
         align-items: center;
     }
 
-    .card-holder {
+    .related-products .card-holder {
         width: 80%;
         margin-bottom: 10px;
     }
 }
-
-
-
 
